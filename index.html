@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- <div id="app">
+      <div class="header">
+        <h1>{{ header || "Nyaho"}}</h1>
+        <button v-if="editing" @click="doEdit(false)" class="btn btn-cancel">Cancel</button>
+        <button v-else @click="doEdit(true)" class="btn btn-primary">Add item</button>
+      </div>
+      <div class="add-item-form" v-if="editing">
+        <input @keyup.enter="saveItem" v-model="newItem" type="text" placeholder="add item" />
+        <label for="">
+          <input type="checkbox" v-model="newHighItemPriority" /> High Priority
+        </label>
+        <button class="btn btn-primary" @click="saveItem" :disabled="newItem.length<3">
+          Save item
+        </button>
+      </div>
+      <p v-if="items.length===0">Nonnoooooo</p>
+      <br />
+      <br />
+      <ul>
+        <li
+          v-for="(item, index) in reversedItems"
+          @click="togglePurchased(item)"
+          :key="item.id"
+          :class="{strikeout: item.purchased, priority: item.highPriority}"
+          class="static-class"
+        >
+          {{item.label}}
+        </li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      const shop = Vue.createApp({
+        data() {
+          return {
+            header: 'Shop app!',
+            editing: false,
+            newItem: '',
+            newHighItemPriority: false,
+            items: [
+              { id: 1, label: '12', purchased: true, highPriority: true },
+              { id: 2, label: '13', purchased: true, highPriority: false },
+              { id: 3, label: '23', purchased: false, highPriority: true }
+            ]
+          }
+        },
+        computed: {
+          reversedItems() {
+            return [...this.items].reverse()
+          }
+        },
+        methods: {
+          saveItem() {
+            this.items.push({
+              id: this.items.length,
+              label: this.newItem,
+              highPriority: this.newHighItemPriority
+            })
+            this.newItem = ''
+            this.newHighItemPriority = ''
+          },
+          doEdit(editing) {
+            this.editing = editing
+            this.newItem = ''
+            this.newHighItemPriority = ''
+          },
+          togglePurchased(item) {
+            item.purchased = !item.purchased
+          }
+        }
+      }).mount('#app')
+    </script> -->
+    <script>
+      Vue.createApp({
+        data() {}
+      })
+    </script>
+    <!-- <script type="module" src="/src/main.ts"></script> -->
+  </body>
+</html>
