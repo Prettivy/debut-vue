@@ -36,6 +36,9 @@ onMounted(() => {
       <router-link
       id="page-prev"
       :to="{name:'event-list', query: {page: page -1}}" rel="prev" v-if="page !=1">&#60; Previous</router-link>
+      <router-link
+      id="page-number"
+      :to="{name:'event-list', query: {page: n}}" rel="prev" v-for="n in 3">{{ n }}</router-link>
     
       <router-link
       id="page-next"
@@ -57,7 +60,7 @@ width: 290px;
 }
 
 .pagination a {
-  flex: 1;
+  flex: 2;
   text-decoration: none;
   color: #2c3e50;
 }
@@ -68,5 +71,9 @@ width: 290px;
 
 #page-next{
   text-align: right;
+}
+
+#page-number {
+  flex: 1;
 }
 </style>
