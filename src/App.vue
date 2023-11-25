@@ -30,6 +30,7 @@ if (to.meta.requireAuth && notAuthorized) {
         </div>
         <nav>
           <RouterLink :to="{name:'event-list'}">Events</RouterLink> |
+          <RouterLink :to="{name:'todo-list'}">To Do</RouterLink> |
           <RouterLink :to="{name:'about'}">About</RouterLink>
         </nav>
       </div>

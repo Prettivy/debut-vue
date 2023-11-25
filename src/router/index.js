@@ -4,7 +4,7 @@ import EventDetails from '@/views/event/Details.vue'
 import EventEdit from '@/views/event/Edit.vue'
 import EventLayout from '@/views/event/Layout.vue'
 import EventRegister from '@/views/event/Register.vue'
-import AboutView from '@/views/AboutView.vue'
+import TodoApp from '@/views/todo/TodoApp.vue'
 import NotFound from '@/views/NotFound.vue'
 import NetworkError from '@/views/NetworkError.vue'
 
@@ -19,6 +19,11 @@ const router = createRouter({
       name: 'event-list',
       component: EventListView,
       props : route=>({page:parseInt(route.query.page) || 1})
+    }, 
+    {
+      path: '/todo',
+      name: 'todo-list',
+      component: TodoApp,
     },
     {
       path: '/events/:id',
