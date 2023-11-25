@@ -1,8 +1,24 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRouter } from 'vue-router'
 import { inject } from 'vue';
 
 const GStore = inject('GStore')
+const router = useRouter()
+
+
+router.beforeEach((to, from) => {
+
+const notAuthorized = true
+if (to.meta.requireAuth && notAuthorized) {
+  GStore.flashMessage = 'Sorry, you are not authorized to view this page'
+  console.log(GStore.flashMessage);
+  setTimeout(() => {
+    GStore.flashMessage = ''
+  }, 3000)
+
+  return false
+}
+})
 </script>
 
 <template>

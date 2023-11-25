@@ -37,6 +37,7 @@ const router = createRouter({
           path: 'edit',
           name: 'event-edit',
           component: EventEdit,
+          meta : {requireAuth: true}
         }
 
       ]
