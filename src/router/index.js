@@ -8,6 +8,9 @@ import AboutView from '@/views/AboutView.vue'
 import NotFound from '@/views/NotFound.vue'
 import NetworkError from '@/views/NetworkError.vue'
 
+
+const About = ()=>import(/* webpackChunkName: "about" */ '@/views/AboutView.vue')
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -51,8 +54,9 @@ const router = createRouter({
     {
       path: '/about-us',
       name: 'about',
-      component: AboutView,
-    },{
+      component: About
+    },
+    {
       path: '/about',
       redirect: {name:'about'}
     },
